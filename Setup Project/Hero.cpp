@@ -34,7 +34,7 @@ void Hero::update(float dt){
 	//update animations too
 	animation->update(dt);
 }
-//test comment
+//test
 void Hero::draw(){
 	if (animation != NULL){
 		if (faceRight)
