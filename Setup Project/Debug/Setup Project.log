@@ -1,1 +1,12 @@
-﻿  Setup Project.vcxproj -> C:\Users\blada\Downloads\gamefilesomething\Setup Project\Debug\Setup Project.exe
+﻿  Entity.cpp
+  Hero.cpp
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\hero.cpp(40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\hero.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\main.cpp(110): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\main.cpp(111): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\main.cpp(112): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blada\downloads\gamefilesomething\setup project\setup project\main.cpp(139): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Vector.cpp
+  Generating Code...
+  Setup Project.vcxproj -> C:\Users\blada\Downloads\gamefilesomething\Setup Project\Debug\Setup Project.exe

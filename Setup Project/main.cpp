@@ -122,7 +122,11 @@ int main(int argc, char **argv)
 	Hero* hero = new Hero();
 	hero->setAnimation(&anim3);
 	hero->setRenderer(renderer);
-	hero->setXY(30, 200);
+	
+	//build vector to represent starting position for hero
+	Vector heroStartPos(200, 200);
+	hero->setPosition(heroStartPos);
+
 	//add our hero to the list
 	entities.push_back(hero);
 

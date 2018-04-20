@@ -1,22 +1,26 @@
 #pragma once
 #include <SDL.h>
+#include "Vector.h"
 
 class Entity
 {
 protected:
 	SDL_Renderer* renderer;
-	float x, y;
+	Vector pos;	//out entitis x/y position
+	Vector velocity; //how fast to move in any direction
 
 public:
 	Entity();
 	~Entity();
 
 	void setRenderer(SDL_Renderer* renderer);
-	void setXY(float x, float y);
-	float getX();
-	float getY();
+	Vector getPosition();
+	void setPosition(Vector pos);
+	Vector getVelocity();
+	void setVelocity(Vector velocity);
 
 	virtual void update(float dt);
+	virtual void updateMovement(float dt);
 	virtual void draw();
 };
 
