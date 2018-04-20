@@ -174,6 +174,49 @@ int main(int argc, char **argv)
 		anim3.draw(50, 250, true); //flip image horizontally???
 		*/
 
+
+		//DEAL WITH USER INPUT
+		//we check what kind of user input events have happened since our last check
+		SDL_Event e;
+		//loops through all events and temporality stores event details in an SDL_Event object
+		while (SDL_PollEvent(&e))
+		{
+			//check if user has clicked on the close window button
+			if (e.type == SDL_QUIT)
+			{
+				//exit our loop
+				loop = false;
+			}
+			//check if user has pressed a button(not held)
+			if(e.type == SDL_KEYDOWN)
+			{
+				//see if ESC key was pressed
+				if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE)
+				{
+					loop = false;
+				}
+				//if press up
+				if (e.key.keysym.scancode == SDL_SCANCODE_UP)
+				{
+					//tell hero to move up now
+					Vector heroVelocity = hero->getVelocity();
+					heroVelocity.y = -100;
+					hero->setVelocity(heroVelocity);
+				}
+				//if press down
+				if (e.key.keysym.scancode == SDL_SCANCODE_DOWN)
+				{
+					//tell hero to move down now
+					Vector heroVelocity = hero->getVelocity();
+					heroVelocity.y = 100;
+					hero->setVelocity(heroVelocity);
+				}
+			}
+
+
+
+		}
+
 		//loop through and update and draw all entities
 		for (list<Entity*>::iterator eIt = entities.begin(); eIt != entities.end(); eIt++){
 			(*eIt)->update(DT);
@@ -184,11 +227,14 @@ int main(int argc, char **argv)
 		//get renderer to output to the window
 		SDL_RenderPresent(renderer);
 
+		/*
 		//sdl_ticks checks how many milliseconds since we started running our game
 		if (SDL_GetTicks() > 5000)
 		{
 			loop = false;
 		}
+		*
+		/
 	}
 	//SDL_Delay pauses game for x many milliseconds
 	//SDL_Delay(5000); //5000ms = 5secs
